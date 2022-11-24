@@ -22,7 +22,7 @@ pipeline {
                 def nextVersion = getNextSemanticVersion()
                 sh "git tag ${nextVersion}"
                 sh "git push origin ${nextVersion}"
-                echo 'Deploying....'
+                echo 'Deploying...'
             }
         }
     }
