@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+        stage('configure git') {
+            steps {
+                sh 'git config --global user.email "jenkins.test@test.de"'
+                sh 'git config --global user.name "jenkins"'
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building..'
