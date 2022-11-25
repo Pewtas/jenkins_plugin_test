@@ -19,7 +19,7 @@ pipeline {
                         minorPattern: '^[Ff]eature.*',
                         patchPattern: '^[Bb]ugfix.*'
                     sh "git tag --force ${nextVersion}"
-                    sh "git push origin ${nextVersion}"
+                    sh "git push origin --force ${nextVersion}"
                 }
                 echo "Deploying..."
             }
