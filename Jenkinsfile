@@ -19,7 +19,7 @@ pipeline {
                         minorPattern: '^[Ff]eature.*',
                         patchPattern: '^[Bb]ugfix.*'
                 }
-                echo "Deploying version ${nextVersion}"
+                echo "Deploying..."
             }
         }
     }
