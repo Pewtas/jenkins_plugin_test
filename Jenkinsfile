@@ -18,7 +18,7 @@ pipeline {
                     def nextVersion = getNextSemanticVersion majorPattern: '^[Mm]ajor.*',
                         minorPattern: '^[Ff]eature.*',
                         patchPattern: '^[Bb]ugfix.*'
-                    sh "git tag ${nextVersion}"
+                    sh "git tag --force ${nextVersion}"
                     sh "git push origin ${nextVersion}"
                 }
                 echo "Deploying..."
