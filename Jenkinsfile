@@ -21,7 +21,7 @@ pipeline {
                     sh "git tag --force ${nextVersion}"
                     sh "git push origin --force ${nextVersion}"
                 }
-                echo "Deploying...."
+                echo "Deploying..../"
             }
         }
     }
