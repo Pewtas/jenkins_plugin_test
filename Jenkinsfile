@@ -15,9 +15,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    def nextVersion = getNextSemanticVersion majorPattern: '^[Mm]ajor.*',
-                        minorPattern: '^[Ff]eature.*',
-                        patchPattern: '^[Bb]ugfix.*'
+                    def nextVersion = getNextSemanticVersion()
                     sh "git tag --force ${nextVersion}"
                     sh "git push origin --force ${nextVersion}"
                 }
